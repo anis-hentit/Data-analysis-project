@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-image: url('/static/images/back.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+<div class="container" style="background-image: url('/static/images/white.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+    <div class="jumbotron mt-5" style="background-image: url('/static/images/predict.gif'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        <h1 class="display-4 text-center">Churn Prediction Result</h1>
+    </div>
+    <div class="text-center">
+        <h2>Based on the information provided, the prediction is as follows:</h2>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card text-center" style="background-image: url('/static/images/white.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                {% if prediction == 0 %}
+                <div class="card-body">
+                    <h3 class="text-success">No Churn</h3>
+                    <img src="static/images/NOchurn.gif" class="gif" alt="Happy Face"/>
+                    <div class="recomendations">
+                        <h2 class="recom text-center">Great News!</h2>
+                        <h2 class="recom text-center">The customer is not predicted to churn.</h2>
+                    </div>
+                    
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card text-center" style="background-image: url('/static/images/white.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+                {% if prediction == 1 %}
+                <div class="card-body">
+                    <h3 class="text-danger">Churn</h3>
+                    <img src="static/images/Churn.gif" class="gif" alt="Sad Face"/>
+                    <div class="recomendations">
+                        <h2 class="recom">Recommendations:</h2>
+                        <ul class="text-left">
+                            <li>Take necessary steps to retain the customer.</li>
+                            <li>Offer incentives or discounts to prevent churn.</li>
+                            <li>Investigate reasons for churn and address them.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

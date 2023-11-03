@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction Form</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styling.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body style="background-image: url('/static/images/back.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+<div class="testbox">
+    <form action="/predict" method="POST" target="_blank" style="background-image: url('/static/images/white.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        <div class="banner" style="background-image: url('static/images/to.gif'); background-size: cover; background-position: center center; background-repeat: no-repeat; height: 300px;">
+            <h1 class="text-center">To Churn or Not To Churn</h1>
+        </div>
+        <br>
+       
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Call_Failure">Call Failure</label>
+                    <input type="number" class="form-control" id="Call_Failure" name="Call_Failure" placeholder="Enter call failure" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Complains">Complains</label>
+                    <select class="form-control" id="Complains" name="Complains" required>
+                      <option disabled selected value> -- select an option -- </option>
+                      <option value="0">No Complaint</option>
+                      <option value="1">Complaint</option>
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Subscription_Length">Subscription Length</label>
+                    <input type="number" class="form-control" id="Subscription_Length" name="Subscription_Length" placeholder="Enter subscription length" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Charge_Amount">Charge Amount</label>
+                    <input type="number" class="form-control" id="Charge_Amount" name="Charge_Amount" placeholder="Enter charge amount" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Seconds_of_Use">Seconds of Use</label>
+                    <input type="number" class="form-control" id="Seconds_of_Use" name="Seconds_of_Use" placeholder="Enter seconds of use" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Frequency_of_Use">Frequency of Use</label>
+                    <input type="number" class="form-control" id="Frequency_of_Use" name="Frequency_of_Use" placeholder="Enter frequency of use" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Frequency_of_Sms">Frequency of SMS</label>
+                    <input type="number" class="form-control" id="Frequency_of_Sms" name="Frequency_of_Sms" placeholder="Enter frequency of SMS" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Distinct_Called_Numbers">Distinct Called Numbers</label>
+                    <input type="number" class="form-control" id="Distinct_Called_Numbers" name="Distinct_Called_Numbers" placeholder="Enter distinct called numbers" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Age_Group">Age Group</label>
+                    <select class="form-control" id="Age_Group" name="Age_Group" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">1 (Younger Age)</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5 (Older Age)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Tariff_Plan">Tariff Plan</label>
+                    <select class="form-control" id="Tariff_Plan" name="Tariff_Plan" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">Pay as you go</option>
+                        <option value="2">Contractual</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Status">Status</label>
+                    <select class="form-control" id="Status" name="Status" required>
+                        <option disabled selected value> -- select an option -- </option>
+                        <option value="1">Active</option>
+                        <option value="2">Non-Active</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Customer_Value">Customer Value</label>
+                    <input type="number" class="form-control" id="Customer_Value" name="Customer_Value" placeholder="Enter customer value" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-block text-center">
+        
+          <button type="submit" class="btn btn-primary" id="submitBtn">Predict Churn</button>
+        </div>
+    </form>
+</div>
+
+
+
+  
+</body>
+</html>
