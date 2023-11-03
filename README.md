@@ -14,7 +14,7 @@ This repository contains the code and data for a Churn Prediction project, inclu
 
 ## Data
 
-The project utilizes a <a rel="https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset">customer churn dataset</a> containing various features related to customer behavior and subscription details. The dataset is available in the 'data' directory.
+The project utilizes a <a href="https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset">customer churn dataset</a> containing various features related to customer behavior and subscription details. The dataset is available in the 'data' directory.
 
 ## Exploratory Data Analysis (EDA)
 
@@ -50,7 +50,7 @@ To run the code and explore the project, follow these steps:
 
 3. Run the notebook.
 
-4. To deploy the Churn Prediction model as a Flask API simply run the last cell of the notebook and open <a rel="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>
+4. To deploy the Churn Prediction model as a Flask API simply run the last cell of the notebook and open <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>
 
 5. Experiment with the API by submitting input data for churn prediction.
 
