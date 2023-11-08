@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request
-import xgboost as xgb  # Ensure you have XGBoost installed
+import xgboost as xgb  # Ensure XGBoost is installed
 import pandas as pd
 
 app = Flask(__name__)
 
-# Load your trained XGBoost model
+# Load the XGBoost model
 model = xgb.Booster()
-model.load_model('XGboost_Model.model')  # Update with your model file
+model.load_model('XGboost_Model.model')  
 
 @app.route("/")
 def index():
@@ -42,7 +42,7 @@ def preprocessDataAndPredict(feature_dict):
     for feature, mean, std in zip(features_to_standardize, means, stds):
         test_data[feature] = (test_data[feature] - mean) / std
 
-    # Use your XGBoost model to make predictions
+    # Use XGBoost model to make predictions
     prediction = model.predict(xgb.DMatrix(test_data))[0]
    
       # Apply a threshold to get the binary prediction (0 or 1)
